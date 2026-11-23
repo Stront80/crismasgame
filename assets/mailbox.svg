@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 96" fill="none">
+  <!-- Авторская векторная иллюстрация: тёплый почтовый ящик с письмом. -->
+  <defs>
+    <linearGradient id="body" x1="26" y1="16" x2="65" y2="65" gradientUnits="userSpaceOnUse"><stop stop-color="#d06464"/><stop offset=".42" stop-color="#a8414d"/><stop offset="1" stop-color="#742d3c"/></linearGradient>
+    <linearGradient id="rim" x1="73" y1="19" x2="105" y2="62" gradientUnits="userSpaceOnUse"><stop stop-color="#f0b28a"/><stop offset=".5" stop-color="#c66a62"/><stop offset="1" stop-color="#8f3c48"/></linearGradient>
+    <linearGradient id="door" x1="86" y1="63" x2="99" y2="81" gradientUnits="userSpaceOnUse"><stop stop-color="#bd6160"/><stop offset="1" stop-color="#813340"/></linearGradient>
+    <linearGradient id="gold" x1="47" y1="10" x2="64" y2="34" gradientUnits="userSpaceOnUse"><stop stop-color="#ffe5ab"/><stop offset="1" stop-color="#bd8b46"/></linearGradient>
+    <linearGradient id="letter" x1="79" y1="40" x2="94" y2="65" gradientUnits="userSpaceOnUse"><stop stop-color="#fff9df"/><stop offset="1" stop-color="#dfbd85"/></linearGradient>
+  </defs>
+  <!-- Полупрозрачная тень не закрывает фон игрового интерфейса. -->
+  <ellipse cx="64" cy="89" rx="40" ry="4" fill="#031c18" opacity=".22"/>
+  <path d="M49 60h12v27c0 3-12 3-12 0V60Z" fill="#a4774d"/>
+  <path d="M49 63h4v24h-4V63Z" fill="#dbb17b"/>
+  <path d="M43 87h23l4 4H39l4-4Z" fill="#bd9661"/>
+  <!-- Корпус и тёмный арочный проём придают рисунку объём. -->
+  <path d="M17 60V36c0-14 10-24 24-24h43c13 0 23 11 23 25v25H20a3 3 0 0 1-3-2Z" fill="url(#body)"/>
+  <path d="M22 36c0-11 8-19 19-19h31" stroke="#f3b7a1" stroke-width="2" stroke-linecap="round" opacity=".54"/>
+  <path d="M18 56h52v6H20a2 2 0 0 1-2-2v-4Z" fill="#652b39" opacity=".45"/>
+  <path d="M65 62V37c0-14 9-25 21-25s22 11 22 25v25H65Z" fill="url(#rim)"/>
+  <path d="M70 60V37c0-12 7-20 16-20s17 8 17 20v23H70Z" fill="#3c2630"/>
+  <path d="M74 59V38c0-9 5-16 12-16s13 7 13 16v21H74Z" fill="#251f26"/>
+  <!-- Поднятый золотистый флажок и небольшая заклёпка. -->
+  <path d="M47 35V8h17v11H51v16h-4Z" fill="url(#gold)" stroke="#6f4436" stroke-width="1" stroke-linejoin="round"/>
+  <path d="M51 10h11v2H51z" fill="#fff3c8" opacity=".7"/>
+  <circle cx="49" cy="36" r="4" fill="#d9b477"/><circle cx="49" cy="36" r="1.5" fill="#88603f"/>
+  <!-- Кремовый конверт выступает из отсека; его клапан узнаваем без текста. -->
+  <g transform="rotate(-12 88 51)">
+    <rect x="72" y="38" width="31" height="25" rx="2.5" fill="url(#letter)" stroke="#b38c58" stroke-width="1"/>
+    <path d="m73 61 12-11a4 4 0 0 1 5 0l12 11" stroke="#ba9664" stroke-width="1.1"/>
+    <path d="m73 40 12 10a4 4 0 0 0 5 0l12-10" fill="#fff3d2" stroke="#c49d68" stroke-width="1.2" stroke-linejoin="round"/>
+    <circle cx="88" cy="51" r="3" fill="#ad4853"/>
+    <path d="m87 50 1 2 1-2" stroke="#ecc995" stroke-width=".8" stroke-linecap="round"/>
+  </g>
+  <!-- Откинутая дверца образует аккуратную полочку под письмом. -->
+  <path d="m67 62 12 14c2 3 5 4 9 4h20c6 0 8-4 5-8l-7-10H67Z" fill="url(#door)" stroke="#db9b7c" stroke-width="1.3" stroke-linejoin="round"/>
+  <path d="m73 65 10 10h24l-7-10H73Z" fill="#6c303c" opacity=".65"/>
+  <path d="M96 77h8" stroke="#e6be8b" stroke-width="2" stroke-linecap="round"/>
+  <path d="M69 62h36" stroke="#e5ad84" stroke-width="2" stroke-linecap="round"/>
+  <!-- Хвойная веточка связывает иллюстрацию с рождественской палитрой игры. -->
+  <path d="m12 80 27 5" stroke="#c5a36c" stroke-width="1.5" stroke-linecap="round"/>
+  <g stroke="#5d9781" stroke-width="2" stroke-linecap="round"><path d="m19 81-5-6m10 7-4-8m10 9-3-8m9 9-1-7m-15 5-7 3m14-2-7 5m14-4-7 5"/></g>
+  <circle cx="32" cy="77" r="2.5" fill="#b94e59"/><circle cx="36" cy="80" r="2" fill="#d18b72"/>
+  <path d="m111 22 1.5 4.5L117 28l-4.5 1.5L111 34l-1.5-4.5L105 28l4.5-1.5L111 22Z" fill="#e5c58d"/>
+</svg>

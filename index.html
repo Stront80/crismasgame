@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#132f2c">
+  <meta name="description" content="Рождество у бабули — уютная семейная игра. Собирайте подарки, берегитесь снежков и подарите семье праздник!">
+  <title>Рождество у бабули · YaCo 2026</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Ctext y='52' font-size='52'%3E🎁%3C/text%3E%3C/svg%3E">
+  <link rel="stylesheet" href="style.css">
+  <script src="game.js" defer></script>
+</head>
+<body data-state="intro">
+  <div class="game-shell">
+    <header class="topbar">
+      <a class="wordmark" href="./" aria-label="YaCoGames"><img class="wordmark-logo" src="assets/yacogames-logo.png" width="2172" height="724" alt="YaCoGames"></a>
+      <div class="topbar-title"><span data-i18n="eyebrow">СЕМЕЙНАЯ РОЖДЕСТВЕНСКАЯ ИГРА</span></div>
+      <div class="settings" data-i18n-aria="settingsLabel" aria-label="Настройки">
+        <button id="music-button" class="icon-button" type="button" aria-label="Музыка включена" title="Музыка"><span aria-hidden="true">♫</span></button>
+        <button id="sfx-button" class="icon-button sound-button" type="button" aria-label="Звуки включены" title="Звуки"><span aria-hidden="true">◖))</span></button>
+        <button id="lang-button" class="language-button" type="button" aria-label="Switch to English">EN</button>
+      </div>
+    </header>
+
+    <main class="playground" data-i18n-aria="playgroundLabel" aria-label="Рождество у бабули">
+      <div class="game-heading">
+        <div class="grandma-mini"><img src="assets/grandma.jpg" data-i18n-alt="grandmaAlt" alt="Бабуля" width="48" height="48"><div><p data-i18n="title">Рождество у бабули</p><span data-i18n="grandmaNote">99 лет любви и тепла</span></div></div>
+        <button id="pause-button" type="button" class="icon-button pause-button" data-i18n-aria="pause" aria-label="Пауза"><span aria-hidden="true">Ⅱ</span></button>
+      </div>
+      <div class="hud" data-i18n-aria="hudLabel" aria-label="Результаты игры">
+        <div><span class="hud-label" data-i18n="score">Подарки</span><strong id="score-value">0</strong></div>
+        <div class="hud-time"><span class="hud-label" data-i18n="time">Время</span><strong id="time-value">1:00</strong></div>
+        <div><span class="hud-label" data-i18n="lives">Жизни</span><strong id="lives-value" class="hearts">♥ ♥ ♥</strong></div>
+      </div>
+      <div class="board">
+        <canvas id="game-canvas" width="600" height="700" tabindex="0" data-i18n-aria="canvasLabel" aria-label="Игровое поле. Двигайте корзину пальцем или клавишами влево и вправо."></canvas>
+        <div class="board-vignette" aria-hidden="true"></div>
+
+        <section id="intro-screen" class="screen intro-screen" aria-labelledby="intro-title">
+          <div class="intro-copy">
+            <p class="eyebrow"><span aria-hidden="true">✦</span> <span data-i18n="eyebrow">СЕМЕЙНАЯ РОЖДЕСТВЕНСКАЯ ИГРА</span></p>
+            <h1 id="intro-title" data-i18n="title">Рождество<br>у бабули</h1>
+            <p class="subtitle" data-i18n="subtitle">Соберём подарки для всей большой семьи!</p>
+            <div class="portrait-block"><div class="portrait-frame"><img class="grandma-portrait" src="assets/grandma.jpg" data-i18n-alt="grandmaAlt" alt="Бабуля в белой вязаной шапочке и красном шарфе" width="960" height="1088"></div><span class="age-seal" aria-hidden="true"><b>99</b><span>♡</span></span><span class="portrait-spark" aria-hidden="true">✧</span></div>
+            <div class="rules" data-i18n-aria="rulesLabel" aria-label="Правила игры"><div><span aria-hidden="true">🎁</span><p data-i18n="giftRule">Лови подарки: +10 очков</p></div><div><span class="snowball-icon" aria-hidden="true">●</span><p data-i18n="snowRule">Избегай снежков: −1 жизнь</p></div><div><span aria-hidden="true">◷</span><p data-i18n="timeRule">60 секунд · 3 жизни</p></div></div>
+            <button id="start-button" type="button" class="primary-button"><span aria-hidden="true">▷</span><span data-i18n="start">Играть</span></button>
+            <p class="instruction" data-i18n="instructions">Двигай корзинку пальцем по экрану</p>
+            <p class="best-line"><span aria-hidden="true">✧</span> <span data-i18n="best">Рекорд</span><strong id="best-value">0</strong></p>
+          </div>
+        </section>
+
+        <section id="pause-screen" class="screen overlay-screen" hidden aria-labelledby="pause-title"><div class="modal-card"><span class="modal-star" aria-hidden="true">✧</span><p class="eyebrow" data-i18n="eyebrow">СЕМЕЙНАЯ РОЖДЕСТВЕНСКАЯ ИГРА</p><h2 id="pause-title" data-i18n="paused">Минутка отдыха</h2><p data-i18n="keyboardHint">Двигай корзинку пальцем или клавишами ← →</p><button id="resume-button" type="button" class="primary-button" data-i18n="resume">Продолжить</button></div></section>
+
+        <section id="result-screen" class="screen overlay-screen" hidden aria-labelledby="result-title"><div class="modal-card result-card"><img class="result-portrait" src="assets/grandma.jpg" data-i18n-alt="grandmaAlt" alt="Бабуля" width="100" height="100"><p class="eyebrow" data-i18n="resultLabel">С ЛЮБОВЬЮ, БАБУЛЯ</p><h2 id="result-title" data-i18n="resultTitle">Вот это праздник!</h2><p id="result-message">Спасибо за подарки, мои родные! С Рождеством!</p><div class="result-score"><span data-i18n="score">Очки</span><strong id="result-score">0</strong></div><p class="result-best"><span data-i18n="best">Рекорд</span> <strong id="result-best">0</strong></p><button id="again-button" type="button" class="primary-button" data-i18n="again">Ещё раз</button><button id="home-button" type="button" class="text-button" data-i18n="home">На главный экран</button></div></section>
+      </div>
+      <div class="touch-controls"><button id="left-button" data-i18n-aria="left" class="direction-button" type="button" aria-label="Двигать влево">◀</button><p data-i18n="keyboardHint">Пальцем или клавишами ← →</p><button id="right-button" data-i18n-aria="right" class="direction-button" type="button" aria-label="Двигать вправо">▶</button></div>
+    </main>
+    <footer class="footer"><span data-i18n="copyright">© YaCo 2026</span><span class="footer-star" aria-hidden="true">✦</span><a class="footer-contact" href="mailto:mailbox@familypost.ru"><img class="footer-mailbox" src="assets/mailbox.svg" alt="" width="120" height="96" aria-hidden="true"><span class="footer-contact-copy"><span data-i18n="feedback">Обратная связь</span><span>mailbox@familypost.ru</span></span></a></footer>
+  </div>
+  <p id="game-announcement" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+</body>
+</html>
